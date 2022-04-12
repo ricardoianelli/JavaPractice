@@ -1,18 +1,31 @@
 package algorithmscomparator.algorithms;
 
-import algorithmscomparator.IntegerArrayAlgorithm;
+import algorithmscomparator.ComparableAlgorithm;
 
 // Algorithm 3:
 // Use one loop. Find max and min of even integers. Compute max – min
-public class algorithm3 implements IntegerArrayAlgorithm {
+public class algorithm3 implements ComparableAlgorithm {
+
+    private Integer[] inputs;
+    private Integer result = -1;
 
     @Override
-    public Integer run(Integer[] integers) {
-        
-        Integer min = Integer.MAX_VALUE;
-        Integer max = Integer.MIN_VALUE;
+    public String getResultAsString() {
+        return result.toString();
+    }
 
-        for (Integer integer : integers) {
+    @Override
+    public void changeInput(Object input) {
+        inputs = (Integer[]) input;
+    }
+
+    @Override
+    public void run() {
+        
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+
+        for (Integer integer : inputs) {
             if (integer % 2 != 0)
                 continue;
 
@@ -22,6 +35,6 @@ public class algorithm3 implements IntegerArrayAlgorithm {
                 max = integer;
         }
 
-        return max-min;
+        result = max - min;
     }
 }

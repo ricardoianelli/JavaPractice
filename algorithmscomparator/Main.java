@@ -8,7 +8,7 @@ public class Main {
 
         AlgorithmsComparer comparer = new AlgorithmsComparer();
         Integer[] inputSizes = {1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000};
-        IntegerArrayAlgorithm[] algorithms = {
+        ComparableAlgorithm[] algorithms = {
                 new algorithm1(),
                 new algorithm2(),
                 new algorithm3(),
